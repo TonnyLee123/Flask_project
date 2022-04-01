@@ -8,3 +8,8 @@
 Goal: 健身
 
 create_project (btn) -> create_project(page)
+reminders or goal progress tracking features. (checklists)
+track their progress towards those goals. 
+day-to-day goals
+break down your ambitious goals into smaller tasks. 
+productivity app
