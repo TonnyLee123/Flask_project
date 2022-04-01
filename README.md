@@ -6,3 +6,5 @@
 讓使用者可以設定要達成的目標，並每天po文，照片紀錄。
 
 Goal: 健身
+
+create_project (btn) -> create_project(page)
