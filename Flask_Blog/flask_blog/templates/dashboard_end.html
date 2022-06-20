@@ -1,0 +1,173 @@
+{% extends "dashboard_layout.html" %}
+{% block content %}
+
+<div style="text-align: right;">
+  <a class="btn btn-primary btn-sm" href="#" role="button">查看進行中的目標</a>
+</div>
+<h1 style="text-align: center;">成功&#128537</h1>
+{% for goal in goals_s %}
+    <div class="dashboard-content-section">
+        <table class="table table-bordered table-responsive-md">
+          <caption>{{ goal.date_posted.strftime("%Y/%m/%d") }}</caption>
+          
+          <a style=" text-decoration:none;" href="{{ url_for('goal', goal_id=goal.id) }}"><h3>{{goal.object}}<small style="font-size: 15px;">總分: {{goal.final_score}}</small></h3></a>
+          <thead style="text-align: center;">
+            <tr>
+              <th scope="col" class='col-md-4' colspan="2">任務</th>
+              <th scope="col">一</th>
+              <th scope="col">二</th>
+              <th scope="col">三</th>
+              <th scope="col">四</th>
+              <th scope="col">五</th>
+              <th scope="col">六</th>
+              <th scope="col">日</th>
+              <th scope="col" class='col-md-2'>進度</th>
+            </tr>
+          </thead>
+
+          <tbody>
+              <tr>
+                <td class='col-md-3'>{{ goal.key_result }}</td>
+                <td style="text-align: center;">{{ goal.amount }}</td>
+                <td style="text-align: center;">{{ goal.mon }}</td>
+                <td style="text-align: center;">{{ goal.tue }}</td>
+                <td style="text-align: center;">{{ goal.wed }}</td>
+                <td style="text-align: center;">{{ goal.thu }}</td>
+                <td style="text-align: center;">{{ goal.fri }}</td>
+                <td style="text-align: center;">{{ goal.sat }}</td>
+                <td style="text-align: center;">{{ goal.sun }}</td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{goal.progress}};">{{goal.progress}}</div>
+                  </div>
+                </td>
+              </tr>
+    
+
+          {% if goal.key_result2 %}
+              <tr>
+                <td class='col-md-3'>{{ goal.key_result2 }}</td>
+                <td style="text-align: center;">{{ goal.amount2 }}</td>
+                <td style="text-align: center;">{{ goal.mon2 }}</td>
+                <td style="text-align: center;">{{ goal.tue2 }}</td>
+                <td style="text-align: center;">{{ goal.wed2 }}</td>
+                <td style="text-align: center;">{{ goal.thu2 }}</td>
+                <td style="text-align: center;">{{ goal.fri2 }}</td>
+                <td style="text-align: center;">{{ goal.sat2 }}</td>
+                <td style="text-align: center;">{{ goal.sun2 }}</td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{goal.progress2}};">{{goal.progress2}}</div>
+                  </div>
+                </td>
+              </tr>
+          {% endif %}       
+      
+
+          {% if goal.key_result3 %}
+              <tr>
+                <td class='col-md-3'>{{ goal.key_result3 }}</td>
+                <td style="text-align: center;">{{ goal.amount3 }}</td>
+                <td style="text-align: center;">{{ goal.mon3 }}</td>
+                <td style="text-align: center;">{{ goal.tue3 }}</td>
+                <td style="text-align: center;">{{ goal.wed3 }}</td>
+                <td style="text-align: center;">{{ goal.thu3 }}</td>
+                <td style="text-align: center;">{{ goal.fri3 }}</td>
+                <td style="text-align: center;">{{ goal.sat3 }}</td>
+                <td style="text-align: center;">{{ goal.sun3 }}</td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{goal.progress3}};">{{goal.progress3}}</div>
+                  </div>
+                </td>
+              </tr>
+          {% endif %}   
+
+          </tbody>
+        </table>
+    </div>
+{% endfor %}
+
+<h1 style="text-align: center;">失敗&#128549;</h1>
+{% for goal in goals_f %}
+    <div class="dashboard-content-section">
+        <table class="table table-bordered table-responsive-md">
+          <caption>{{ goal.date_posted.strftime("%Y/%m/%d") }}</caption>
+          <h3>{{goal.object}}</h3>
+          <thead style="text-align: center;">
+            <tr>
+              <th scope="col" class='col-md-4' colspan="2">任務</th>
+              <th scope="col">一</th>
+              <th scope="col">二</th>
+              <th scope="col">三</th>
+              <th scope="col">四</th>
+              <th scope="col">五</th>
+              <th scope="col">六</th>
+              <th scope="col">日</th>
+              <th scope="col" class='col-md-2'>進度</th>
+            </tr>
+          </thead>
+
+          <tbody>
+              <tr>
+                <td class='col-md-3'>{{ goal.key_result }}</td>
+                <td style="text-align: center;">{{ goal.amount }}</td>
+                <td style="text-align: center;">{{ goal.mon }}</td>
+                <td style="text-align: center;">{{ goal.tue }}</td>
+                <td style="text-align: center;">{{ goal.wed }}</td>
+                <td style="text-align: center;">{{ goal.thu }}</td>
+                <td style="text-align: center;">{{ goal.fri }}</td>
+                <td style="text-align: center;">{{ goal.sat }}</td>
+                <td style="text-align: center;">{{ goal.sun }}</td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{goal.progress}};">{{goal.progress}}</div>
+                  </div>
+                </td>
+              </tr>
+    
+
+          {% if goal.key_result2 %}
+              <tr>
+                <td class='col-md-3'>{{ goal.key_result2 }}</td>
+                <td style="text-align: center;">{{ goal.amount2 }}</td>
+                <td style="text-align: center;">{{ goal.mon2 }}</td>
+                <td style="text-align: center;">{{ goal.tue2 }}</td>
+                <td style="text-align: center;">{{ goal.wed2 }}</td>
+                <td style="text-align: center;">{{ goal.thu2 }}</td>
+                <td style="text-align: center;">{{ goal.fri2 }}</td>
+                <td style="text-align: center;">{{ goal.sat2 }}</td>
+                <td style="text-align: center;">{{ goal.sun2 }}</td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{goal.progress2}};">{{goal.progress2}}</div>
+                  </div>
+                </td>
+              </tr>
+          {% endif %}       
+      
+
+          {% if goal.key_result3 %}
+              <tr>
+                <td class='col-md-3'>{{ goal.key_result3 }}</td>
+                <td style="text-align: center;">{{ goal.amount3 }}</td>
+                <td style="text-align: center;">{{ goal.mon3 }}</td>
+                <td style="text-align: center;">{{ goal.tue3 }}</td>
+                <td style="text-align: center;">{{ goal.wed3 }}</td>
+                <td style="text-align: center;">{{ goal.thu3 }}</td>
+                <td style="text-align: center;">{{ goal.fri3 }}</td>
+                <td style="text-align: center;">{{ goal.sat3 }}</td>
+                <td style="text-align: center;">{{ goal.sun3 }}</td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{goal.progress3}};">{{goal.progress3}}</div>
+                  </div>
+                </td>
+              </tr>
+          {% endif %}   
+
+          </tbody>
+        </table>
+    </div>
+{% endfor %}
+{% endblock content %}
