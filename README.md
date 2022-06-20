@@ -16,9 +16,6 @@
 ---
 ![dashboard](https://github.com/TonnyLee123/en/blob/main/dashboard.png?raw=true)
 
-### 2.1 dashboard
-- 使user能對目前正在進行中的目標一目了然。
----
 ![processing](https://github.com/TonnyLee123/en/blob/main/%E9%80%B2%E8%A1%8C%E4%B8%AD.png?raw=true)
 # 3. New Post
 - 允許user分享心情，紀錄實踐目標的過程。
