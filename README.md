@@ -16,7 +16,9 @@
 ---
 ![dashboard](https://github.com/TonnyLee123/en/blob/main/dashboard.png?raw=true)
 
-![processing](https://github.com/TonnyLee123/en/blob/main/%E9%80%B2%E8%A1%8C%E4%B8%AD.png?raw=true)
+### 2.2 紀錄進度
+---
+![recording](https://github.com/TonnyLee123/en/blob/main/%E7%B4%80%E9%8C%84.png?raw=true)
 # 3. New Post
 - 允許user分享心情，紀錄實踐目標的過程。
 ---
