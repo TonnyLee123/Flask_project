@@ -1,0 +1,95 @@
+{% extends "dashboard_layout.html" %}
+{% block content %}
+
+<div class="dashboard-content-section">
+	<table class="table table-bordered table-responsive-md">
+	  <caption>{{ goal.date_posted.strftime("%Y/%m/%d") }}</caption>
+	  <a href="{{ url_for('goal', goal_id=goal.id) }}"><h3>{{goal.object}}</h3></a>
+	  <thead style="text-align: center;">
+	    <tr>
+	      <th scope="col" class='col-md-4' colspan="2">任務</th>
+	      <th scope="col">一</th>
+	      <th scope="col">二</th>
+	      <th scope="col">三</th>
+	      <th scope="col">四</th>
+	      <th scope="col">五</th>
+	      <th scope="col">六</th>
+	      <th scope="col">日</th>
+	      <th scope="col" class='col-md-2'>進度</th>
+	    </tr>
+	  </thead>
+	  <form method="POST" action="">
+		  {{ form.hidden_tag() }}
+		  <tbody>
+		  	<tr>
+		  		<td class='col-md-3'>{{ goal.key_result }}</td>
+		  		<td style="text-align: center;">{{ goal.amount }}</td>	
+		  		<td>{{form.mon(class="form-control form-control-sm")}}</td>
+		  		<td>{{ form.tue(class="form-control form-control-sm") }}</td>
+				<td>{{ form.wed(class="form-control form-control-sm") }}</td>
+				<td>{{ form.thu(class="form-control form-control-sm") }}</td>
+				<td>{{ form.fri(class="form-control form-control-sm") }}</td>
+				<td>{{ form.sat(class="form-control form-control-sm") }}</td>
+				<td>{{ form.sun(class="form-control form-control-sm") }}</td> 
+				<td>
+			      <div class="progress">
+	  				<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{goal.progress}};">{{goal.progress}}</div>
+				  </div>
+				</td>		
+		    </tr>
+
+		    {% if goal.key_result2 %}
+		    <tr>
+		      	<td class='col-md-3'>{{ goal.key_result2 }}</td>
+			  	<td style="text-align: center;">{{ goal.amount2 }}</td>
+				<td style="text-align: center;">{{ form.mon2(class="form-control form-control-sm") }}</td>
+				<td style="text-align: center;">{{ form.tue2(class="form-control form-control-sm") }}</td>
+				<td style="text-align: center;">{{ form.wed2(class="form-control form-control-sm") }}</td>
+				<td style="text-align: center;">{{ form.thu2(class="form-control form-control-sm") }}</td>
+				<td style="text-align: center;">{{ form.fri2(class="form-control form-control-sm") }}</td>
+				<td style="text-align: center;">{{ form.sat2(class="form-control form-control-sm") }}</td>
+				<td style="text-align: center;">{{ form.sun2(class="form-control form-control-sm") }}</td>
+		      	<td>
+			      <div class="progress">
+	  				<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{goal.progress2}};">{{goal.progress2}}</div>
+				  </div>
+				</td>
+		    </tr>
+		    {% endif %}
+
+		    {% if goal.key_result3 %}
+		    <tr>
+		      	<td class='col-md-3'>{{ goal.key_result3 }}</td>
+			  	<td style="text-align: center;">{{ goal.amount3 }}</td>
+				<td style="text-align: center;">{{ form.mon2(class="form-control form-control-sm") }}</td>
+				<td style="text-align: center;">{{ form.tue2(class="form-control form-control-sm") }}</td>
+				<td style="text-align: center;">{{ form.wed2(class="form-control form-control-sm") }}</td>
+				<td style="text-align: center;">{{ form.thu2(class="form-control form-control-sm") }}</td>
+				<td style="text-align: center;">{{ form.fri2(class="form-control form-control-sm") }}</td>
+				<td style="text-align: center;">{{ form.sat2(class="form-control form-control-sm") }}</td>
+				<td style="text-align: center;">{{ form.sun2(class="form-control form-control-sm") }}</td>
+		      	<td>
+			      <div class="progress">
+	  				<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{goal.progress3}};">{{goal.progress3}}</div>
+				  </div>
+				</td>
+		    </tr>
+			{% endif %}
+
+			<div class="btn-group" role="group" >
+			  {{ form.submit(class="btn btn-primary") }}
+			  <a class="btn btn-secondary" href="{{ url_for('update_goal', goal_id=goal.id) }}">更新</a>
+        	  <a class="btn btn-danger" href="{{ url_for('delete_goal', goal_id=goal.id) }}">刪除</a>
+			</div>
+        	<div style="text-align: right;">
+        	{{ form.state.label }} 
+        	{{ form.state}}
+        	</div>
+		  </tbody>
+	  </form>
+	</table>
+
+{{ s }}
+
+
+{% endblock content %}
